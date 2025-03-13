@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDU - Trang Trưởng Phòng</title>
+    <link rel="icon" type="image/png" href="https://bdu.edu.vn/uploads/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E67E22',
+                        secondary: '#FDF2E9'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen font-sans">
+    <!-- Navigation -->
+    <nav class="bg-primary text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/vi/4/41/Logo_BDU.jpg" alt="BDU Logo" class="w-10 h-10 rounded-full mr-3">
+                    <span class="font-semibold text-xl">BDU Smart Reports</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm">
+                        <i class="fas fa-user-circle mr-2"></i>Trưởng phòng
+                    </span>
+                    <a href="index.html" class="text-sm hover:text-gray-200">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Đăng xuất
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 py-6">
+        <!-- Page Title -->
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Trang Duyệt Báo Cáo</h1>
+            <p class="text-gray-600">Quản lý và duyệt báo cáo từ nhân viên</p>
+        </div>
+
+        <!-- Reports Grid -->
+        <div class="grid grid-cols-1 gap-6">
+            <!-- Pending Reports Section -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Báo cáo chờ duyệt</h2>
+                <div class="space-y-4">
+                    <!-- Sample Report 1 -->
+                    <div class="border rounded-lg p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-semibold text-lg">Báo cáo tháng 3/2024</h3>
+                                <p class="text-gray-600">Người gửi: Nguyễn Văn A</p>
+                                <p class="text-gray-600 text-sm">Ngày gửi: 15/03/2024</p>
+                            </div>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">
+                                Chờ duyệt
+                            </span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-medium mb-2">Nội dung báo cáo:</h4>
+                            <p class="text-gray-700">
+                                Báo cáo kết quả hoạt động của phòng trong tháng 3/2024...
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-medium mb-2">File đính kèm:</h4>
+                            <a href="#" class="text-primary hover:underline">
+                                <i class="fas fa-file-pdf mr-2"></i>baocao_thang3.pdf
+                            </a>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="feedback">
+                                    Phản hồi
+                                </label>
+                                <textarea id="feedback" rows="3"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary"
+                                    placeholder="Nhập phản hồi của bạn"></textarea>
+                            </div>
+                            <div class="flex space-x-3">
+                                <button onclick="editReport(1)"
+                                    class="flex-1 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-200">
+                                    <i class="fas fa-edit mr-2"></i>Chỉnh sửa
+                                </button>
+                                <button onclick="approveReport(1)"
+                                    class="flex-1 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-200">
+                                    <i class="fas fa-check mr-2"></i>Duyệt báo cáo
+                                </button>
+                                <button onclick="rejectReport(1)"
+                                    class="flex-1 bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition duration-200">
+                                    <i class="fas fa-times mr-2"></i>Từ chối
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sample Report 2 -->
+                    <div class="border rounded-lg p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-semibold text-lg">Báo cáo quý 1/2024</h3>
+                                <p class="text-gray-600">Người gửi: Trần Thị B</p>
+                                <p class="text-gray-600 text-sm">Ngày gửi: 14/03/2024</p>
+                            </div>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">
+                                Chờ duyệt
+                            </span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-medium mb-2">Nội dung báo cáo:</h4>
+                            <p class="text-gray-700">
+                                Tổng kết hoạt động và kết quả đạt được trong quý 1/2024...
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-medium mb-2">File đính kèm:</h4>
+                            <a href="#" class="text-primary hover:underline">
+                                <i class="fas fa-file-excel mr-2"></i>baocao_quy1.xlsx
+                            </a>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="feedback2">
+                                    Phản hồi
+                                </label>
+                                <textarea id="feedback2" rows="3"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary"
+                                    placeholder="Nhập phản hồi của bạn"></textarea>
+                            </div>
+                            <div class="flex space-x-3">
+                                <button onclick="approveReport(2)"
+                                    class="flex-1 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-200">
+                                    <i class="fas fa-check mr-2"></i>Duyệt báo cáo
+                                </button>
+                                <button onclick="rejectReport(2)"
+                                    class="flex-1 bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition duration-200">
+                                    <i class="fas fa-times mr-2"></i>Từ chối
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Report Modal -->
+    <div id="editModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+        <div class="relative top-20 mx-auto p-5 border w-4/5 shadow-lg rounded-md bg-white">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-semibold">Chỉnh sửa báo cáo</h3>
+                <button onclick="closeEditModal()" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="editForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-2" for="editTitle">
+                        Tiêu đề báo cáo
+                    </label>
+                    <input type="text" id="editTitle" name="editTitle" required
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2" for="editContent">
+                        Nội dung báo cáo
+                    </label>
+                    <textarea id="editContent" name="editContent" rows="6" required
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary"></textarea>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">
+                        File đính kèm hiện tại
+                    </label>
+                    <div class="flex items-center space-x-2 text-sm text-gray-600">
+                        <i class="fas fa-file-pdf"></i>
+                        <span id="currentFile">baocao_thang3.pdf</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">
+                        Thay đổi file đính kèm (không bắt buộc)
+                    </label>
+                    <input type="file" class="w-full">
+                </div>
+                <div class="flex justify-end space-x-3 mt-6">
+                    <button type="button" onclick="closeEditModal()"
+                        class="px-4 py-2 border rounded-lg text-gray-600 hover:bg-gray-100">
+                        Hủy bỏ
+                    </button>
+                    <button type="submit"
+                        class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-orange-600">
+                        Lưu thay đổi
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function editReport(id) {
+            // Populate form with current report data
+            document.getElementById('editTitle').value = 'Báo cáo tháng 3/2024';
+            document.getElementById('editContent').value = 'Báo cáo kết quả hoạt động của phòng trong tháng 3/2024...';
+            // Show modal
+            document.getElementById('editModal').classList.remove('hidden');
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').classList.add('hidden');
+        }
+
+        document.getElementById('editForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here we would normally make an API call to update the report
+            alert('Báo cáo đã được cập nhật thành công!');
+            closeEditModal();
+        });
+
+        function approveReport(id) {
+            const feedback = document.getElementById('feedback' + (id === 1 ? '' : id)).value;
+            // Here we would normally make an API call to approve the report
+            alert('Báo cáo đã được duyệt thành công!');
+        }
+
+        function rejectReport(id) {
+            const feedback = document.getElementById('feedback' + (id === 1 ? '' : id)).value;
+            if (!feedback) {
+                alert('Vui lòng nhập lý do từ chối báo cáo!');
+                return;
+            }
+            // Here we would normally make an API call to reject the report
+            alert('Báo cáo đã bị từ chối!');
+        }
+    </script>
+</body>
+</html>
