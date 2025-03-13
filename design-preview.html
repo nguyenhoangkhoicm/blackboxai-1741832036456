@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDU Smart Reports - Design Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E67E22',
+                        secondary: '#FDF2E9'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .frame {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .frame-header {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .frame-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .frame-dot.red { background-color: #ff5f57; }
+        .frame-dot.yellow { background-color: #ffbd2e; }
+        .frame-dot.green { background-color: #28c940; }
+        .frame-content {
+            transform: scale(0.6);
+            transform-origin: top left;
+            width: 167%;
+            height: 167%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen font-sans p-8">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">BDU Smart Reports - Design System</h1>
+        
+        <!-- Color Palette -->
+        <div class="mb-12">
+            <h2 class="text-xl font-semibold mb-4">Color Palette</h2>
+            <div class="flex gap-4">
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-lg bg-[#E67E22]"></div>
+                    <p class="mt-2 text-sm">Primary<br>#E67E22</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-lg bg-[#FDF2E9]"></div>
+                    <p class="mt-2 text-sm">Secondary<br>#FDF2E9</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-lg bg-green-500"></div>
+                    <p class="mt-2 text-sm">Success<br>#10B981</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-lg bg-red-500"></div>
+                    <p class="mt-2 text-sm">Danger<br>#EF4444</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography -->
+        <div class="mb-12">
+            <h2 class="text-xl font-semibold mb-4">Typography</h2>
+            <div class="space-y-4">
+                <div>
+                    <h1 class="text-4xl font-bold">Heading 1 - Inter Bold 36px</h1>
+                    <p class="text-gray-600">Used for main page titles</p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold">Heading 2 - Inter Semibold 24px</h2>
+                    <p class="text-gray-600">Used for section headers</p>
+                </div>
+                <div>
+                    <p class="text-base">Body Text - Inter Regular 16px</p>
+                    <p class="text-gray-600">Used for general content</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Components -->
+        <div class="mb-12">
+            <h2 class="text-xl font-semibold mb-4">Components</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <!-- Buttons -->
+                <div class="space-y-4">
+                    <h3 class="font-medium mb-2">Buttons</h3>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-orange-600">Primary Button</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Success Button</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Danger Button</button>
+                </div>
+                <!-- Form Elements -->
+                <div class="space-y-4">
+                    <h3 class="font-medium mb-2">Form Elements</h3>
+                    <input type="text" placeholder="Text Input" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary">
+                    <select class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary">
+                        <option>Dropdown Select</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Previews -->
+        <div class="mb-12">
+            <h2 class="text-xl font-semibold mb-4">Page Previews</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <!-- Login Page -->
+                <div class="frame">
+                    <div class="frame-header">
+                        <div class="frame-dot red"></div>
+                        <div class="frame-dot yellow"></div>
+                        <div class="frame-dot green"></div>
+                        <span class="text-sm text-gray-600">Login Page</span>
+                    </div>
+                    <div class="frame-content">
+                        <iframe src="index.html" width="100%" height="600" frameborder="0"></iframe>
+                    </div>
+                </div>
+
+                <!-- Staff Dashboard -->
+                <div class="frame">
+                    <div class="frame-header">
+                        <div class="frame-dot red"></div>
+                        <div class="frame-dot yellow"></div>
+                        <div class="frame-dot green"></div>
+                        <span class="text-sm text-gray-600">Staff Dashboard</span>
+                    </div>
+                    <div class="frame-content">
+                        <iframe src="staff-dashboard.html" width="100%" height="600" frameborder="0"></iframe>
+                    </div>
+                </div>
+
+                <!-- Manager Dashboard -->
+                <div class="frame">
+                    <div class="frame-header">
+                        <div class="frame-dot red"></div>
+                        <div class="frame-dot yellow"></div>
+                        <div class="frame-dot green"></div>
+                        <span class="text-sm text-gray-600">Manager Dashboard</span>
+                    </div>
+                    <div class="frame-content">
+                        <iframe src="manager-dashboard.html" width="100%" height="600" frameborder="0"></iframe>
+                    </div>
+                </div>
+
+                <!-- Secretary Dashboard -->
+                <div class="frame">
+                    <div class="frame-header">
+                        <div class="frame-dot red"></div>
+                        <div class="frame-dot yellow"></div>
+                        <div class="frame-dot green"></div>
+                        <span class="text-sm text-gray-600">Secretary Dashboard</span>
+                    </div>
+                    <div class="frame-content">
+                        <iframe src="secretary-dashboard.html" width="100%" height="600" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design System Notes -->
+        <div class="bg-white rounded-lg p-6 shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Design System Notes</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>Consistent use of BDU's orange brand color (#E67E22) across all pages</li>
+                <li>Clean, modern interface with ample white space</li>
+                <li>Responsive design that works on all screen sizes</li>
+                <li>Clear visual hierarchy with consistent typography</li>
+                <li>Intuitive navigation and user-friendly forms</li>
+                <li>Interactive elements with hover states for better UX</li>
+                <li>Status indicators using consistent color coding</li>
+                <li>Modal dialogs for focused tasks like editing reports</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
